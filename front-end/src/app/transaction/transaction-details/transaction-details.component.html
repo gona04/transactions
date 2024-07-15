@@ -1,18 +1,21 @@
-<table class="table table-bordered table-hover">
-  <tbody>
-    <tr>
-      <th>ID</th>
-      <td>{{transaction?.id}}</td>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <td>{{transaction?.date | date: 'dd/MM/yyyy'}}</td>
-    </tr>
-    <tr>
-      <th>Comments</th>
-      <td>
-        <input class="form-control" [formControl]="commentsControl" type="text" placeholder="Comments">
-      </td>
-    </tr>
-  </tbody>
-</table>
+<form (ngSubmit)="onSubmit()">
+  <table class="table table-bordered table-hover">
+    <tbody>
+      <tr>
+        <th>ID</th>
+        <td>{{transaction?.id}}</td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td>{{transaction?.date | date: 'dd/MM/yyyy'}}</td>
+      </tr>
+      <tr>
+        <th>Comments</th>
+        <td>
+          <input class="form-control" [formControl]="commentsControl" type="text" placeholder="Comments">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>

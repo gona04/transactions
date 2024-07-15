@@ -28,4 +28,8 @@ export class TransactionService {
       }))
     );
   }
+
+  updateTransaction(id: string, transactionData: any) {
+    return this.http.patch(`${this.apiUrl}/${id}`, transactionData);
+  }
 }
