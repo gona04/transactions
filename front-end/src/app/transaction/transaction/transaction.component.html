@@ -1,0 +1,29 @@
+<main class="container">
+    <div class="row">
+        <div class="col-12 mt-4">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Comments</th>
+                    <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let transaction of transactions">
+                    <td>{{ transaction.id }}</td>
+                    <td>{{ transaction.date | date }}</td>
+                    <td>{{ transaction.comments }}</td>
+                    <td>
+                    <a href="javascript:void(0)" (click)="viewDetails(transaction)">
+                        {{ transaction.actions}}
+                    </a>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</main>
