@@ -32,10 +32,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
 app.use('/api', transactionRoutes);
 
 app.listen(port, () => {

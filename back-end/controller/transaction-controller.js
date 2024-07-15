@@ -17,10 +17,7 @@ const transactionController = {
     const updateData = req.body;
   
     try {
-      // Find the transaction by ID and update it with the data provided in the request body
-      // { new: true } option returns the document after update was applied
       const updatedTransaction = await Transaction.findByIdAndUpdate(id, updateData, { new: false });
-      console.log(updateData);
       if (!updatedTransaction) {
         return res.status(404).send(`Transaction with ID: ${id} not found.`);
       }
