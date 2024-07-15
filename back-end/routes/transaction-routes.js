@@ -7,6 +7,6 @@ const transactionController = require('../controller/transaction-controller');
 router.get('/transactions', transactionController.getAllTransactions);
 
 // GET route for fetching a single transaction by ID
-router.patch('/transactions/:id', transactionController.updateTransaction);
+router.post('/transactions/:id', transactionController.updateTransaction);
 
 module.exports = router;

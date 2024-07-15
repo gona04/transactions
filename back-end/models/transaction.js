@@ -63,7 +63,7 @@ const transactionSchema = new Schema({
         type: String,
         required: true
     },
-    comments: {
+    Comments: {
         type: String,
         required: false // Assuming comments might not be required
     },

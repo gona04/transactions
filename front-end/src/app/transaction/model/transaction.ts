@@ -1,4 +1,5 @@
 export class Transaction {
+    _id: string = ''; // Add an initializer to the _id property
     id: number;
     date: Date;
     Comments: string = '';

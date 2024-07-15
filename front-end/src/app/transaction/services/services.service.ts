@@ -30,6 +30,7 @@ export class TransactionService {
   }
 
   updateTransaction(id: string, transactionData: any) {
-    return this.http.patch(`${this.apiUrl}/${id}`, transactionData);
+    console.log(id, transactionData);
+    return this.http.post(`${this.apiUrl}/${id}`, transactionData);
   }
 }

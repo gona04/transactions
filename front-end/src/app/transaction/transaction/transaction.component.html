@@ -4,26 +4,25 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                    <th>ID</th>
-                    <th>Date</th>
-                    <th>Comments</th>
-                    <th>Actions</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Comments</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let transaction of transactions">
-                    <td>{{ transaction.id }}</td>
-                    <td>{{ transaction.date | date: 'MM/dd/yyyy' }}</td>
-                    <td>{{ transaction.Comments }}</td>
-                    <td>
-                    <a href="javascript:void(0)" (click)="viewDetails(transaction)">
-                        View Details
-                    </a>
-                    </td>
+                        <td>{{ transaction.id }}</td>
+                        <td>{{ transaction.date | date: 'MM/dd/yyyy' }}</td>
+                        <td>{{ transaction.Comments }}</td>
+                        <td>
+                            <button type="button" (click)="viewDetails(transaction)" [attr.aria-label]="'View details for transaction ' + transaction.id">
+                                View Details
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
-            
         </div>
     </div>
 </main>
