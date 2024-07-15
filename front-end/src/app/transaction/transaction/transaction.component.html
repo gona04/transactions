@@ -13,11 +13,11 @@
                 <tbody>
                     <tr *ngFor="let transaction of transactions">
                     <td>{{ transaction.id }}</td>
-                    <td>{{ transaction.date | date }}</td>
-                    <td>{{ transaction.comments }}</td>
+                    <td>{{ transaction.date | date: 'MM/dd/yyyy' }}</td>
+                    <td>{{ transaction.Comments }}</td>
                     <td>
                     <a href="javascript:void(0)" (click)="viewDetails(transaction)">
-                        {{ transaction.actions}}
+                        View Details
                     </a>
                     </td>
                     </tr>

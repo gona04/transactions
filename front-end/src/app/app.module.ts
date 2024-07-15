@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TransactionComponent } from './transaction/transaction/transaction.component';
 import { HeaderComponent } from './header/header.component';
-import { TransactionDetailsComponent } from './transaction-details/transaction-details.component';
+import { TransactionDetailsComponent } from './transaction/transaction-details/transaction-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { TransactionDetailsComponent } from './transaction-details/transaction-d
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

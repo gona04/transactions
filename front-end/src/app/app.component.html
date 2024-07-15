@@ -1,2 +1,3 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
+<app-transaction (viewDetailsEvent)="handleViewDetails($event)"></app-transaction>
+<app-transaction-details *ngIf="selectedTransaction" [transaction]="selectedTransaction"></app-transaction-details>

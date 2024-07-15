@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  
+  selectedTransaction: any;
+
+handleViewDetails(transaction: any) {
+  this.selectedTransaction = transaction;
+}
 }
