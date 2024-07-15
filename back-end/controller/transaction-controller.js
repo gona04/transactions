@@ -12,17 +12,20 @@ const transactionController = {
     }
   },
 
-  getTransactionById: async (req, res) => {
+  updateTransaction: async (req, res) => {
     const { id } = req.params;
-    try {
-      // Attempt to find a transaction by ID without filtering by status
-      const transaction = await Transaction.findById(id);
+    const updateData = req.body;
   
-      if (!transaction) {
+    try {
+      // Find the transaction by ID and update it with the data provided in the request body
+      // { new: true } option returns the document after update was applied
+      const updatedTransaction = await Transaction.findByIdAndUpdate(id, updateData, { new: true });
+  
+      if (!updatedTransaction) {
         return res.status(404).send(`Transaction with ID: ${id} not found.`);
       }
   
-      res.status(200).json(transaction);
+      res.status(200).json(updatedTransaction);
     } catch (error) {
       res.status(500).send(error.message);
     }
